@@ -26,7 +26,7 @@ from sklearn.metrics import accuracy_score
 # In[11]:
 
 
-data = pd.read_csv('/Users/laurenhartmann/Downloads/eras.csv')
+data = pd.read_csv('eras.csv')
 
 
 ########################## CLEAN AND PREP ###############
@@ -168,7 +168,7 @@ def predict_values(predictor_value):
 
 # Streamlit Interface
 
-st.image("/Users/laurenhartmann/Downloads/eras.jpg")
+st.image("eras.jpg")
 
 st.title("Eras Tour Outfits & Details Predictions")
 
