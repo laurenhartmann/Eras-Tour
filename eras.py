@@ -212,9 +212,9 @@ elif page == "Surprise Songs":
            st.write("""Let's take a look at the albums Taylor plays from for both the guitar and piano surprise songs:
            
            ### Guitar Songs""")
-           st.image("Guitar Surprise Songs.png", caption: "Pie Chart of Guitar Song Albums")
+           st.image("Guitar Surprise Songs.png", caption= "Pie Chart of Guitar Song Albums")
            st.write("""### Piano Songs""")
-           st.image("Piano Surprise Songs.png", caption: "Pie Chart of Piano Song Albums")
+           st.image("Piano Surprise Songs.png", caption= "Pie Chart of Piano Song Albums")
 
 
 # In[ ]:
