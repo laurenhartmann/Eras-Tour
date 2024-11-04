@@ -172,7 +172,7 @@ page = st.sidebar.selectbox("Choose a page", ["About", "Outfit Predictor", "Surp
 
 # Eras Tour Prediction Page
 if page == "Outfit Predictor":
-    st.image("eras.jpg", caption="Eras Tour Stage image", use_column_width=True)
+    st.image("eras.jpg", use_column_width=True)
     st.title("Eras Tour Outfits & Details Predictions")
 
     # Dropdown for predictor selection
@@ -214,11 +214,11 @@ elif page == "Surprise Songs":
            
            ### Guitar Songs
            """)
-           st.image("Guitar Surprise Songs.png", caption= "Pie Chart of Guitar Song Albums")
+           st.image("Guitar Surprise Songs.png")
            st.write("""
            ### Piano Songs
            """)
-           st.image("Piano Surprise Songs.png", caption= "Pie Chart of Piano Song Albums")
+           st.image("Piano Surprise Songs.png")
 
 
 # In[ ]:
