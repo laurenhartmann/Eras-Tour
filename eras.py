@@ -209,11 +209,15 @@ elif page == "About":
     """)
 elif page == "Surprise Songs":
            st.title("Surprise Songs Stats")
-           st.write("""Let's take a look at the albums Taylor plays from for both the guitar and piano surprise songs:
+           st.write("""
+           Let's take a look at the albums Taylor plays from for both the guitar and piano surprise songs:
            
-           ### Guitar Songs""")
+           ### Guitar Songs
+           """)
            st.image("Guitar Surprise Songs.png", caption= "Pie Chart of Guitar Song Albums")
-           st.write("""### Piano Songs""")
+           st.write("""
+           ### Piano Songs
+           """)
            st.image("Piano Surprise Songs.png", caption= "Pie Chart of Piano Song Albums")
 
 
