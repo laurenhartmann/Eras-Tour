@@ -167,28 +167,54 @@ def predict_values(predictor_value):
 
 
 # Streamlit Interface
+# Sidebar navigation
+page = st.sidebar.selectbox("Choose a page", ["About", "Outfit Predictor", "Surprise Songs"])
 
-st.image("eras.jpg")
+# Eras Tour Prediction Page
+if page == "Outfit Predictor":
+    st.image("eras.jpg", caption="Eras Tour Stage image", use_column_width=True)
+    st.title("Eras Tour Outfits & Details Predictions")
 
-st.title("Eras Tour Outfits & Details Predictions")
+    # Dropdown for predictor selection
+    selected_predictor = st.selectbox(
+        'Select A Lover Body Suit',
+        options=list(predictor_map.values())
+    )
 
-# Dropdown for predictor selection
-selected_predictor = st.selectbox(
-    'Select A Lover Body Suit',
-    options=list(predictor_map.values())
-)
+    # Convert selected string to corresponding numeric value
+    predictor = dict1[selected_predictor]
 
-# Convert selected string to corresponding numeric value
-predictor = dict1[selected_predictor]
+    # Display results when button is clicked
+    if st.button("Predict"):
+        predictions_df = predict_values(predictor)
+        
+        # Display predictions as a transposed table for readability
+        st.write("**Predicted Values:**")
+        st.table(predictions_df.transpose())
 
-# Display results when button is clicked
-if st.button("Predict"):
-    predictions_df = predict_values(predictor)
-    
-    # Display predictions
-    st.write("**Predicted Values:**")
-    st.table(predictions_df.transpose())
-    
+# About Page
+elif page == "About":
+    st.title("Welcome!")
+    st.write("""
+        This app uses descriptive statistics and machine learning to provide insights about 
+        the Eras Tour, predict details and outfit choices, and much more.
+        
+        ### How The Model Works
+        - The app leverages a trained Random Forest model to make predictions.
+        - Choose an outfit characteristic for the Lover Bodysuit, and the model predicts associated tour outfit details.
+        
+        ### Additional Information
+        Upcoming will be details about the surprise songs, and other descriptive stats as the final leg of the tour
+        comes to a close
+    """)
+elif page == "Surprise Songs":
+           st.title("Surprise Songs Stats")
+           st.write("""Let's take a look at the albums Taylor plays from for both the guitar and piano surprise songs:
+           
+           ### Guitar Songs""")
+           st.image("Guitar Surprise Songs.png", caption: "Pie Chart of Guitar Song Albums")
+           st.write("""### Piano Songs""")
+           st.image("Piano Surprise Songs.png", caption: "Pie Chart of Piano Song Albums")
 
 
 # In[ ]:
